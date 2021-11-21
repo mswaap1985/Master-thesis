@@ -1,11 +1,11 @@
-\chapter{Implementation}\label{s:implementation}
-\graphicspath{ {./images/} }
-\begin{figure}[t]
-\centering
-\caption{Zoomed in on QAS of ASR-1}
-\label{fig:ASR2}
-\end{figure}
-\includegraphics[width=12cm]{Decomposition of ASR and QAS_zoomed in on ASR-1 and ASR-2_v2.jpg}\\
+%\chapter{Implementation}\label{s:implementation}
+%\graphicspath{ {./images/} }
+%\begin{figure}[t]
+%\centering
+%\caption{Zoomed in on QAS of ASR-1}
+%\label{fig:ASR2}
+%\end{figure}
+%\includegraphics[width=12cm]{Decomposition of ASR and QAS_zoomed in on %ASR-1 and ASR-2_v2.jpg}\\
 
 To answer research question 2 and combining it with the answer of research question 3 in context of software architecture, it can be explained in architectural patterns and tactics. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system."
 
@@ -37,8 +37,11 @@ Firstly, this method is based on blockchain technology, meaning this pattern is 
 \end{figure}
 
 \subsection{Authentication}
+A commonly used method for authentication purposes is usage of a certificate. For parties who communicate with on or on behalf of the Dutch government the government issues PKIoverheid (PKIO) certificates. These certificates are used for Authentication, Electronic signatures and encryption. \cite{Logius_PKIO}
 
 \subsection{Data minimization}
+\todo{add a description of this method, but emphasise how it's possible to use in software architecture}
+\lipsum[1-1]
 
 \subsection{Encryption - Transfer of data is encrypted with TLS 1.2 or higher}
 A broadly implemented standard. The Dutch government has a reference architecture NORA (Nederlandse Overheid Referentie Architecture) \cite{NORA} which states this standard needs to be applied or otherwise explained why it has not been implemented \cite{NORA_PasToeOfLegUit}. On the part of TLS its clear version 1.2 or higher is accepted, but version 1.3 is prefered \cite{NORA_TLS}. 

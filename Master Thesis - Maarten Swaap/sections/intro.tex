@@ -6,23 +6,30 @@
 %solution, and describes the contributions.}
 
 \section{Motivation}
-A report of the Auditdienst Rijk (ADR)\cite{ADR} takes in account numbers of the citizen service for Identity Fraud at the National Office for Identity Data (Rijksdienst voor Identiteitsgegevens). Somewhere around 4.0000 citizens a year contact this service to report identity fraud. In some cases, the impact is low and only a discomfort. In other cases, the fraud results in identity theft that can lead, for example, to debts or fines.\par 
-One of the main objectives of the Digitale Overheid (Digital Government) is to 'Protect fundamental rights and public values'\cite{DO_agenda}. One could argue protecting the identity and privacy of citizens is part of this objective.
-
-The objective of this research is to help reduce the opportunity of identity theft and simultaneously improve citizens’ privacy by making usage of encryption technologies. During this research it became clear definitions of both identity fraud and encryption technologies are needed to eventually implement mitigating actions. The scope of this research is to collect a set of uniform needed requirements and conditions plotted on different type of identity fraud. Objective is to implement these technologies easier and how to describe which type of identity fraud it can prevent. Starting with encryption technologies that already exist and making it possible for future research to adapt the outcomes of this research for new technologies.
-
-Because the ADR researched the Burger Service Nummer (BSN) and the role as a Unique Identification Number (UIN) the research started around this number. During the research it became clear that the BSN is part of the identity and only one of the enablers for identity fraud.\par
+The objective of this research is combining the problem of identity fraud with technical solutions, which are mostly cryptography methods. Not for a sole purpose or a single software solution, but generically usable patterns and tactics to be used building software.
 
 \section{Research question}
 How can encryption technologies reduce the possibility to commit identity fraud, without losing the benefit of exchanging personal data of a citizen within the government of The Netherlands, and how can further suitability for these methods be assessed?
 
-\begin{quote}\emph{RQ1: Which forms of identity fraud can be identified that could be mitigated with usage of encryption methodologies?}\end{quote}
-\begin{quote}\emph{RQ2: Which forms of encryption methodologies are available and already implemented or being implemented?}\end{quote}
+\begin{quote}\emph{RQ1: Which forms of identity fraud can be identified that could be mitigated with usage of cryptography technology?}\end{quote}
+\begin{quote}\emph{RQ2: Which forms of cryptography technology are available and already implemented or being implemented?}\end{quote}
 \begin{quote}\emph{RQ3: Which requirements are significantly relevant to assess technical suitability and trade offs of these technologies for broader usage within the Dutch government?}\end{quote}
 
 \section{Scientific and practical contribution of this research}
-Before starting this research, the definition of identity fraud looked straightforward. However, it is needed to define and scope which types of identity fraud exist and how the risks could be mitigated by making use of encryption technologies. To be more precise, this research is scoped on proven encryption technology, that is already in use within the Dutch government and has been peer reviewed. 
+Implementing technology means a system should be in place and therefore a software architecture is present. Bass '\etal \cite{Bass2015SoftwareAI} defines software architecture as "a program or computing system is the structure or structures of the system, which comprise software elements, the externally visible properties of those elements, and the relationships among them." Also, Bass \etal formulate every software system has an architecture, only not always formally described.
 
-The contribution to science and practice will be achieved by defining a basic framework that takes in account types of identity fraud and on the other hand how they can be mitigated by implemented encryption technologies. Encryption is associated with security and privacy, but these are only part of software architecture and implementations. Therefore, this framework will take in account more Software Quality attributes from the ISO 25010 standard. Together, with business goals, significant requirements and concerns this can be used generically when developing new software. 
+The contribution to science and practice will be achieved by defining a basic set of patterns and tactics that could mitigate identity fraud by implementing technology. 
 
-This research will not answer the question which method should be used for implementation. The framework can help designers and builders of software systems assessing suitability. Also, it can be assumed Identity fraud and requirements will evolve over time, resulting in a continuously evolving framework.
+Also, this research will not only take in account security aspects, but looks at the set of Architectural Significant Requirements, based on Software Quality attributes from the ISO 25010 standard. Together, with formulated business goals and concerns this can be used generically when developing new software. The patterns and tactics can help designers and builders build or assess their system.
+
+This research will not answer the question which method should be used for implementation. Also, it can be assumed business goals, concerns, requirements and technology will evolve over time, resulting in a continuously evolving set of variables to take in account.
+
+\subsection{Identity Fraud and impact}
+One of the main objectives of the Digitale Overheid (Digital Government) is to 'Protect fundamental rights and public values'\cite{DO_agenda}. One could argue protecting the identity and privacy of citizens is part of this objective.
+
+The objective of this research is to help reduce the opportunity of identity theft and simultaneously improve citizens’ privacy by making usage of cryptography technologies. During this research it became clear definitions of both identity fraud and cryptography technologies are needed to eventually implement mitigating actions. The scope of this research is to collect a set of uniform needed requirements and conditions plotted on different type of identity fraud. Objective is to implement these technologies easier and how to describe which type of identity fraud it can prevent. Starting with encryption technologies that already exist and making it possible for future research to adapt the outcomes of this research for new technologies.
+
+Because the ADR researched the Burger Service Nummer (BSN) and the role as a Unique Identification Number (UIN) the research started around this number. During the research it became clear that the BSN is part of the identity and only one of the enablers for identity fraud.\par
+
+
+
