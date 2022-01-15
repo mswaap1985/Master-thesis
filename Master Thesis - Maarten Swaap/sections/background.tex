@@ -13,8 +13,15 @@ Firstly, during this research it became clear that a UIN is only a part of the p
 \section{Scope}
 To position problem and solution correctly, it is needed to define and scope definition and problem within this research. A UIN is part of a persons Identity data. But it's only one element within the identity data connected to an individual person. Thus, it's important to frame the position of a UIN among with other data within in this domain.
 De Vries \etal \cite{Vries2007IdentiteitsfraudeEA} split up 'Means of identification' (for example a passport or drivers licence) and 'Identity data' for analytical purposes. This research will focus on 'Identity data'. It cannot be denied identity fraud applies on both domains, but because of restrictions in time and resources focus is needed. 
-\subsection*{Description of identity data types}
-Figure \ref{fig:ID_domain} decomposes the domain described by De Vries \etal. This research is scoped at 'Formal functional identity data'. In certain way 'Profile data' has overlap with this research, because a UIN can be used in facilitating combination of data-sets. However, due to time restrictions out of scope.
+
+\subsection{Description of identity data types} \label{Identity_datatypes}
+Figure \ref{fig:ID_domain} decomposes the domain described by De Vries \etal. This research is scoped at 'Formal functional identity data'. In certain way 'Profile data' has overlap with this research, because a UIN can be used in facilitating combination of data-sets and unauthorized profiling. Definitions provided by De Vries \etal: 
+\graphicspath{ {./images/} }
+\begin{figure}[t]
+\includegraphics[width=10cm]{Identity data defintions and domain-Overview.jpg}\\
+\caption{Domain of Identity Data.}
+\label{fig:ID_domain}
+\end{figure}
 \begin{enumerate}
 \item \textit{Physical and bio-metric identity data} - General physically identification data. For example, sex, height, hair color, iris, DNA-profile or medical history
 \item \textit{Formal functional identity data} - Data assigned or ascribed in a certain stage of phase of life. To functionally distinguish individuals and assign rights and obligations to this individual.
@@ -24,15 +31,9 @@ Figure \ref{fig:ID_domain} decomposes the domain described by De Vries \etal. Th
 \end{enumerate}
 \item \textit{Profile data} - Based on a certain set of factual data, an algorithm defines profiles that categorize a person. 
 \end{enumerate}
-\graphicspath{ {./images/} }
-\begin{figure}[t]
-\includegraphics[width=10cm]{Identity data defintions and domain-Overview.jpg}\\
-\caption{Domain of Identity Data}
-\label{fig:ID_domain}
-\end{figure}
 
-\subsection{Definition of Identity Fraud and scope within this research}
-While executing this research it became clear that identity fraud is a catch-all term. De Vries \etal \cite{97408536fd1c4f4e9d1615b7a4a4473e} have analysed 30 international definitions and formulated a general description "Identity fraud is to obtain, to possess or to create intentionally, (and) (unlawfully or without consent) false means of identification
+\subsection{Definition of Identity Fraud - scoped at Identity theft for this research}
+While executing this research it became clear that identity Fraud is a catch-all term. De Vries \etal \cite{97408536fd1c4f4e9d1615b7a4a4473e} have analysed 30 international definitions and formulated a general description "Identity Fraud is to obtain, to possess or to create intentionally, (and) (unlawfully or without consent) false means of identification
 in order to commit unlawful behaviour, or to have the intention to commit unlawful behaviour." In the footnote it states: "It must be noted that ‘false’ in the description refers to the idea that the means of identification do not identify the person who uses them truthfully." It's needed to say this is a generic definition. Figure \ref{fig:ID_fraud} shows the different types of mismatch between a person and identity data, defined by De Vries \etal \cite{Vries2007IdentiteitsfraudeEA}. This research will focus on a subset of Identity Fraud, namely Identity Theft.
 \graphicspath{ {./images/} }
 \begin{figure}[t]
@@ -41,16 +42,8 @@ in order to commit unlawful behaviour, or to have the intention to commit unlawf
 \label{fig:ID_fraud}
 \end{figure}
 
-\subsection{Definition, pros and cons of a UIN}
-The World Bank \cite{WorldBank_UIN} defines ID numbers "In the context of foundational systems, ID numbers are considered to be “unique when: firstly, the number-generating process ensures that no two people within the system share the same number and secondly, a deduplication process ensures that the same person does not have multiple identity records or numbers (i.e., that they are unique in the database)." The World Bank identifies two derived strengths, namely ‘Uniqueness and deduplication’ and ‘Data matching and interoperability’. This means each person can be identified uniquely, allowing for a fast and easy exchange of identity related information between different organizations.\par 
-However, the benefit of fast and easy exchange of identity related information, is also highly susceptible to misuse. Identity Fraud and Theft leans heavily on the benefit of ‘Data matching and interoperability’ of the UIN. A second form of misuse that leans on this benefit is Unauthorized data correlation. \par
-
-\subsection{Operational problems of a UIN}
-\todo{combineren van datasets en onbeheerd delen van data}
-The World Bank ID4ID defines vulnerabilities and risks when UINs are ubiquitous available \cite{WorldBank_protecting}. Identity theft and fraud and unauthorized data correlation are two operational problems correlated with UINs. 
-
 \subsection{Quantitative impact of Identity Fraud}
-The research of De Vries \etal states it's difficult to quantify identity fraud, because it's incorporated in other crimes {\cite{Vries2007IdentiteitsfraudeEA}}{\todo{toevoegen bronvermelding}}. Quantification is relevant for this research, because when a form of identity fraud can be quantified, the mitigation of this form can be argued. Emphasis of this research will be argumentation and not quantification. This research uses quantification as an input, but does not conduct research on quantification of output. {\todo{Opnemen in future research}}
+De Vries \etal state it's difficult to quantify identity fraud, because it's incorporated in other crimes.\cite{Vries2007IdentiteitsfraudeEA}. Goudriaan \etal claim many crimes in Western countries are not even reported to the police \cite{Gourdriaan_etal}. Quantification is relevant to define how big a problem is and what a possible solution could mitigate. However, even if quantified correctly, selected countermeasures would only contain substantiated arguments by means of logical reasoning or extensive research after applying it. Emphasis of this research will be logical reasoning and argumentation and not quantification of the effect of a solution. Firstly, because this is not realistic due to time restrictions. Secondly, it's needed to define a quantification method. Which is not the scope of this research.
 
 A report of the Auditdienst Rijk (ADR)\cite{ADR} takes in account numbers of the citizen service for Identity Fraud at the National Office for Identity Data (Rijksdienst voor Identiteitsgegevens). Somewhere around 4.0000 citizens a year contact this service to report identity fraud. In some cases, the impact is low and only a discomfort. In other cases, the fraud results in identity theft that can lead, for example, to debts or fines.\par
 
@@ -60,13 +53,19 @@ https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/barh?ts=1637054521497
 https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/table?ts=1637054352194}}.
 When looking at a broader scope, to anticipate on a definition creep, another research of the CBS is relevant {\cite{CBS_casualtiesDigitalCrime}} and zooms in on the way casualties act.
 
+\subsection{Role of the UIN}
+The World Bank \cite{WorldBank_UIN} defines ID numbers "In the context of foundational systems, ID numbers are considered to be “unique when: firstly, the number-generating process ensures that no two people within the system share the same number and secondly, a deduplication process ensures that the same person does not have multiple identity records or numbers (i.e., that they are unique in the database)." The World Bank identifies two derived strengths, namely ‘Uniqueness and deduplication’ and ‘Data matching and interoperability’. This means each person can be identified uniquely, allowing for a fast and easy exchange of identity related information between different organizations.\par 
+However, the benefit of fast and easy exchange of identity related information, is also highly susceptible to misuse. Identity Fraud and Theft leans heavily on the benefit of ‘Data matching and interoperability’ of the UIN. A second form of misuse that leans on this benefit is Unauthorized data correlation. \par
+
+\subsection{Operational problem}
+The World Bank ID4ID defines vulnerabilities and risks when UINs are ubiquitous available \cite{WorldBank_protecting}. Identity theft and fraud and unauthorized data correlation are two operational problems. This research will focus on the practical problem of unauthorized correlation, in section \ref{Identity_datatypes} defined as 'Profile data', by using 'Formal functional identity data'. The UIN of a person can be defined as 'Assigned identity data'. Architectural patterns and tactics will focus on mitigating this problem, taking relevant QA's and ASRs into account. 
+The UK national fraud and cybercrime reporting centre states only a name, date of birth and current or previous addresses is needed to commit identity fraud. \cite{Action_fraud}
+Identity data can be obtained by personal data in a data breach, for example a breach via commercial parties or (semi-)government. Recent examples are Booking.com \cite{Booking_databreach} or the Dutch GGD \cite{GGD_databreach}.
+
+
 \subsection{Legal implications}
 Dutch laws enforce the exchange of identity data of a citizen and explicitly state to include BSN in this dataset. These laws exist in order to stimulate controlled exchange of personal data. This applies to government bodies , pension providers  and healthcare organizations. Usage of an alternative method, not explicitly providing a BSN, can be interpreted as not complying with these laws. This interpretation is not in scope for my thesis research.\par
-However, technologies like encryption and pseudonymisation are explicitely stated in General Data Protection Regulation (GDPR, REGULATION (EU) 2016/679) {\cite{GDPR}} to be in place as a safeguard. 
-Other rules and regulations may apply, but are not in scope.\\
-\todo{Briefly describe cryptographic standards and context}
-
-
+However, technologies like encryption and pseudonymisation are explicitely stated in General Data Protection Regulation (GDPR, REGULATION (EU) 2016/679) {\cite{GDPR}} to be in place as a safeguard. Other rules and regulations may apply, but are not in scope.
 %
 %\subsection{Pseudonymization or tokenization of a UIN}
 %Researching possible solutions in literature and consulting experts showed %two viable methods worth analyzing. Pseudonymization and tokenization. %Pseudonymization of BSN already has been applied within the Dutch %government by Logius. Previous work by AuditDienst Rijk on the usage of BSN % already discussed pseudonymization as an option. Tokenization is an %alternative method largely applied in payment sector (Adyen and Apple Pay) %to ensure privacy of customers. This method is suggested by the World Bank %as a possible solution to replace a UIN, because it’s been applied within %the governments of Austria, India and Estionia.\par
