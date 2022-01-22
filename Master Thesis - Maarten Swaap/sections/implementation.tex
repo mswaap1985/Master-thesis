@@ -14,25 +14,48 @@ Patterns exist of multiple tactics. While tactics are chosen to empower a single
 
 Section \ref{Quantitative_impact} discusses the quantified problem and argues logical reasoning will define how a solution could mitigate the operational problem mentioned in section \ref{Operational_problem}
 \section{Pattern - Zero-knowledge proof}
-\graphicspath{ {./images/} }
-\begin{figure}[t]
-\centering
-\label{fig:ZKP}
-\includegraphics[width=15cm]{A zero-knowledge-proof-based digital identity management scheme in blockchain.png}\\
-\caption{Zero knowledge proof}
-\end{figure}
+%\graphicspath{ {./images/} }
+%\begin{figure}[t]
+%\centering
+%\label{fig:ZKP}
+%\includegraphics[width=15cm]{A zero-knowledge-proof-based %digital identity management scheme in blockchain.png}\\
+%\caption{Zero knowledge proof}
+%\end{figure}
 By definition of Goldwasser \etal \cite{Goldwasser} "A zero-knowledge proof (ZKP) makes it possible to prove a statement is true while preserving confidentiality of secret information". 
 Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique,
 which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP} shows a schema on how this principle works. The ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders.
-Reasoning why this methodology or pattern is a solution for the operational problem in section \ref{Operational_Problem} is if there is no identity data to be shared or replicated, there will be no profiling or unauthorized correlation of identity data can be done. Without identity data it's not possible to commit identity fraud. 
+Reasoning why this methodology or pattern is a solution for the operational problem in section \ref{Operational_Problem} is if there is no identity data to be shared or replicated, there will be no profiling or unauthorized correlation of identity data can be done. Without identity data it's not possible to commit identity fraud.
+
+\subsection{Application of Zero-Knowledge proof}
+Zero-knowledge proof itself is a methodology which translates in a variety of technical implementation possibilities. Assessing suitability of this pattern is done by scoping a possible solution in a use-case.
+
+\todo{Improve this use-case description}
+Acting parties: Employer, employee, Belastingdienst.
+When a citizen starts working at an employer, the employer is responsible for the wage declaration. The wage declaration contains income taxes and it's transferred to the tax authorities. In the happy flow, all information off the employee is processed correctly. However, there are practical exceptions, where an employer receives the wrong BSN. The BSN is incorrect or does not match with the employee. Both result in overhead in administration and incorrect data within wage declaration chain.
+A possible solution would be to let the employer check the correctness of personal information when hiring a citizen. Section \ref{BRP} describes the BRP as the central database of personal identity data of citizens and could be used for this purpose. However, giving all employees access to this source of data is not desirable. Not acting in good faith could result in scraping the database to commit fraud or unauthorized usage of personal data, like mentioned in section \ref{Operational_problem}. Zero-knowledge proof could be a pattern that can resolve this problem by providing a check if the data the employer receives from an employee matches with a person in the BRP. 
+
+\graphicspath{ {./images/} }
+\begin{figure}
+\centering
+\label{fig:ZKP_usecase}
+\includegraphics[width=17cm]{Usecase for zkp.jpg}\\
+\caption{Example usecase where ZKP could suffice}
+\end{figure}
+
+\todo{Add solution, what to take into account globally}
 
 \subsection{Trade-offs and concerns}
-Firstly, this method is based on validation of information technology, meaning this pattern is suitable in online scenarios. Secondly, blockchain technology is relatively new and knowledge on this topic can be scarce. Both are a trade-off to take in account when applying this pattern. 
+\todo{Scrapbook, needs refinement}
+Maintainability - The complexity of the methodology and need of a continuous maintenance on the part of applying the correct algorithm. 
+Adaptability - 
+
+Depending on the type of algorithm used, it's up-to-date on known issues and treats (bedreigingen).
+Trade-off snelheid/efficientie. Depends on choosen methodology and algoritm. It's needed to address the needed calculation power (and assumed costs) when selecting algoritms 
 \todo{Better describe and support these trade-offs and concerns}
 
 \section{Tactics - Quality attribute 'Confidentiality'}
 \graphicspath{ {./images/} }
-\begin{figure}[t]
+\begin{figure}
 \centering
 \label{fig:Tactics}
 \includegraphics[width=17cm]{Tactics.jpg}\\
