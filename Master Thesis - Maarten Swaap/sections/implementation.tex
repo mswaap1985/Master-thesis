@@ -8,13 +8,11 @@
 %\includegraphics[width=12cm]{Decomposition of ASR and QAS_zoomed in on %ASR-1 and ASR-2_v2.jpg}\\
 \chapter{Implementation}\label{s:Implementation}
 \todo{better describe why there is a different between currently implemented and future architectures}
-To answer research question 2 and combining it with the answer of research question 3 in context of software architecture, it can be explained in architectural patterns and tactics. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system."
+Research question 3 focuses on patterns and tactics, in context of software architecture, Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section will give examples on patterns and tactics, combined with trade-offs to take in account when designing a system. Combined with the collected concerns
 
-Patterns exist of multiple tactics. While tactics are chosen to empower a single quality attribute, a pattern could serve multiple quality attributes. This chapter will cover one pattern and a set of tactics. Both focused on the quality attribute of confidentiality.
-\footnote{This research covers only one pattern and a few tactics. Specialists like cryptographers could argue there is an extensive set of patterns and tactics that can be applied.}
+Patterns exist of multiple tactics. While tactics are chosen to empower a single quality attribute, a pattern could serve multiple quality attributes. This chapter will cover one pattern and a set of tactics. Both focused on the quality attribute 'Confidentiality'.
 
-\section{Greenfield solutions - newly implemented architectures}
-\subsection{Pattern - Apply Zero-knowledge proof}
+\section{Pattern - Zero-knowledge proof}
 \graphicspath{ {./images/} }
 \begin{figure}[t]
 \centering
@@ -30,8 +28,7 @@ which means that the prover can convince the verifier that a certain statement i
 Firstly, this method is based on blockchain technology, meaning this pattern is suitable in online scenarios. Secondly, blockchain technology is relatively new and knowledge on this topic can be scarce. Both are a trade-off to take in account when applying this pattern. 
 \todo{Better describe and support these trade-offs and concerns}
 
-\section{Brownfield solutions - currently used architectures }
-\subsection{Confidentiality tactics}
+\section{Confidentiality tactics}
 \graphicspath{ {./images/} }
 \begin{figure}[t]
 \centering
@@ -52,7 +49,8 @@ A broadly implemented standard. The Dutch government has a reference architectur
 
 \subsection{Peudonymization - Polymorphic Identity or Polymorphic Pseudonym}
 When it's mandatory to share personal information, because it's for example mandatory by law, it's possible to provide this information as a pseudonym. GDPR \cite{GDPR} defines this method as a possibility to mitigate unwanted disclosure of personal information. 
-This technique is already implemented and proven it can work by Erik Verheul \cite{VerheuleID}. 
+This technique is already implemented and proven it can work by Erik Verheul \cite{VerheuleID}.
+
 
 %%% Local Variables:
 %%% mode: latex
