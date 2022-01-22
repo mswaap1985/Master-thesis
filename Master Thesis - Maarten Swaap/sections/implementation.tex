@@ -8,27 +8,29 @@
 %\includegraphics[width=12cm]{Decomposition of ASR and QAS_zoomed in on %ASR-1 and ASR-2_v2.jpg}\\
 \chapter{Implementation}\label{s:Implementation}
 \todo{better describe why there is a different between currently implemented and future architectures}
-Research question 3 focuses on patterns and tactics, in context of software architecture, Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section will give examples on patterns and tactics, combined with trade-offs to take in account when designing a system. Combined with the collected concerns
+Research question 3 focuses on patterns and tactics, in context of software architecture. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section will give examples on patterns and tactics, combined with trade-offs to take in account when designing a system. Combined with the collected business goals and concerns.
 
 Patterns exist of multiple tactics. While tactics are chosen to empower a single quality attribute, a pattern could serve multiple quality attributes. This chapter will cover one pattern and a set of tactics. Both focused on the quality attribute 'Confidentiality'.
 
+Section \ref{Quantitative_impact} discusses the quantified problem and argues logical reasoning will define how a solution could mitigate the operational problem mentioned in section \ref{Operational_problem}
 \section{Pattern - Zero-knowledge proof}
 \graphicspath{ {./images/} }
 \begin{figure}[t]
 \centering
 \label{fig:ZKP}
-\includegraphics[width=16cm]{A zero-knowledge-proof-based digital identity management scheme in blockchain.png}\\
+\includegraphics[width=15cm]{A zero-knowledge-proof-based digital identity management scheme in blockchain.png}\\
 \caption{Zero knowledge proof}
 \end{figure}
-
-Xiaohui Yang and Wenjie Li\cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptographic technique,
-which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." The paper shows a method on how to implement Zero-knowledge proof without exposing personal information of the subject. Figure 5.2 shows a schema on how this principle works. Basically it means the party requesting information does not get all data, but only an answer on its question.
+By definition of Goldwasser \etal \cite{Goldwasser} "A zero-knowledge proof (ZKP) makes it possible to prove a statement is true while preserving confidentiality of secret information". 
+Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique,
+which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP} shows a schema on how this principle works. The ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders.
+Reasoning why this methodology or pattern is a solution for the operational problem in section \ref{Operational_Problem} is if there is no identity data to be shared or replicated, there will be no profiling or unauthorized correlation of identity data can be done. Without identity data it's not possible to commit identity fraud. 
 
 \subsection{Trade-offs and concerns}
-Firstly, this method is based on blockchain technology, meaning this pattern is suitable in online scenarios. Secondly, blockchain technology is relatively new and knowledge on this topic can be scarce. Both are a trade-off to take in account when applying this pattern. 
+Firstly, this method is based on validation of information technology, meaning this pattern is suitable in online scenarios. Secondly, blockchain technology is relatively new and knowledge on this topic can be scarce. Both are a trade-off to take in account when applying this pattern. 
 \todo{Better describe and support these trade-offs and concerns}
 
-\section{Confidentiality tactics}
+\section{Tactics - Quality attribute 'Confidentiality'}
 \graphicspath{ {./images/} }
 \begin{figure}[t]
 \centering
