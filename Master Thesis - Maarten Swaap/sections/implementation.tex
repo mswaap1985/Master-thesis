@@ -12,7 +12,7 @@ Research question 3 focuses on patterns and tactics, in context of software arch
 
 Patterns exist of multiple tactics. While tactics are chosen to empower a single quality attribute, a pattern could serve multiple quality attributes. This chapter will cover one pattern and a set of tactics. Both focused on the quality attribute 'Confidentiality'.
 
-Section \ref{Quantitative_impact} discusses the quantified problem and argues logical reasoning will define how a solution could mitigate the operational problem mentioned in section \ref{Operational_problem}
+Section \ref{QI} discusses the quantified problem and argues logical reasoning will define how a solution could mitigate the operational problem mentioned in section \ref{Operational_problem}
 \section{Pattern - Zero-knowledge proof}
 %\graphicspath{ {./images/} }
 %\begin{figure}[t]
@@ -22,9 +22,8 @@ Section \ref{Quantitative_impact} discusses the quantified problem and argues lo
 %\caption{Zero knowledge proof}
 %\end{figure}
 By definition of Goldwasser \etal \cite{Goldwasser} "A zero-knowledge proof (ZKP) makes it possible to prove a statement is true while preserving confidentiality of secret information". 
-Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique,
-which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP} shows a schema on how this principle works. The ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders.
-Reasoning why this methodology or pattern is a solution for the operational problem in section \ref{Operational_Problem} is if there is no identity data to be shared or replicated, there will be no profiling or unauthorized correlation of identity data can be done. Without identity data it's not possible to commit identity fraud.
+Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique, which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP_usecase} shows a schema on how this principle works. The ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders.
+Reasoning why this methodology or pattern is a solution for the operational problem in section \ref{OP} is if there is no identity data to be shared or replicated, there will be no profiling or unauthorized correlation of identity data can be done. Without identity data it's not possible to commit identity fraud.
 
 \subsection{Application of Zero-Knowledge proof}
 Zero-knowledge proof itself is a methodology which translates in a variety of technical implementation possibilities. Assessing suitability of this pattern is done by scoping a possible solution in a use-case.

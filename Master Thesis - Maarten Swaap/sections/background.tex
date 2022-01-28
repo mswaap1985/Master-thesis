@@ -42,15 +42,15 @@ in order to commit unlawful behaviour, or to have the intention to commit unlawf
 \label{fig:ID_fraud}
 \end{figure}
 
-\subsection{Quantitative impact of Identity Fraud}\label{Quantitative_impact}
+\subsection{Quantitative impact of Identity Fraud}\label{QI}
 De Vries \etal state it's difficult to quantify identity fraud, because it's incorporated in other crimes.\cite{Vries2007IdentiteitsfraudeEA}. Goudriaan \etal claim many crimes in Western countries are not even reported to the police \cite{Gourdriaan_etal}. Quantification is relevant to define how vast a problem is and how a possible solution could mitigate it. Emphasis of this research will be logical reasoning and argumentation and not quantification of the effect of a solution. Firstly, because this is not realistic due to time restrictions. Secondly, it's needed to define an exact quantification method. Which is not the scope of this research. However, even if quantified correctly, selected countermeasures would only contain substantiated arguments by means of logical reasoning or extensive research after applying it.
 
 A report of the Auditdienst Rijk (ADR)\cite{ADR} takes in account numbers of the citizen service for Identity Fraud at the National Office for Identity Data (Rijksdienst voor Identiteitsgegevens). Somewhere around 4.0000 citizens a year contact this service to report identity fraud. In some cases, the impact is low and only a discomfort. In other cases, the fraud results in identity theft that can lead, for example, to debts or fines.\par
 
 However, over time Statistics Netherlands (CBS) quantified data of identity fraud, based on statistical data. Purely looking at the data classified by Identity Fraud, CBS defines it: "Without permission, via internet, making usage of someones personal data for financial gain, for example by withdraw or transfer of money, take out a loan or request of official documents." Roughly 0.5\% of Dutch citizens in 2019 became victim of identity fraud. Based on a population of 17 million, this means roughly 86.000 people are confronted with Identity Fraud each year. 
-{\todo{TABEL HIER https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/table?ts=1637054627124
-https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/barh?ts=1637054521497
-https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/table?ts=1637054352194}}.
+\todo{TABEL HIER "https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/table?ts=1637054627124"
+"https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/barh?ts=1637054521497"
+"https://opendata.cbs.nl/#/CBS/nl/dataset/82464NED/table?ts=1637054352194"}.
 When looking at a broader scope, to anticipate on a definition creep, another research of the CBS is relevant {\cite{CBS_casualtiesDigitalCrime}} and zooms in on the way casualties act.
 
 \subsection{Role of the UIN}
@@ -61,7 +61,7 @@ However, the benefit of fast and easy exchange of identity related information, 
 The Dutch Personal Records Database or Basisregistratie Personen (BRP) contains personal information (including BSN) and history of a person in a list of attributes. BRP contains the person lists of both residents and non-resident. Residents are citizens residing in a municipality for a consecutive period. Non-residents are citizens with Dutch nationality who live abroad or people temporarily living or working within The Netherlands. \cite{BRP} The BRP provides a selection of attributes or a complete person list of all attributes to organizations which are permitted by law. After providing information, the receiving organization replicates the personal information to it's own database. From a data minimization perspective the provided content of information is minimized for the purpose of use.  
 Providing and replicating a set of data is designed and implemented with the historical perspective of limitations on bandwidth and systems based on batch processing. Currently, bandwidth and real-time processing could be considered a standard but need to be taken in account for costs and power consumption considerations. \todo{referentie}
 
-\subsection{Operational problem}\label{Operational_problem}
+\subsection{Operational problem}\label{OP}
 The World Bank ID4ID defines vulnerabilities and risks when UINs are ubiquitous available \cite{WorldBank_protecting}. Identity theft and fraud and unauthorized data correlation are two operational problems. This research will focus on the practical problem of unauthorized correlation, in section \ref{Identity_datatypes} defined as 'Profile data', by using 'Formal functional identity data'. The UIN of a person can be defined as 'Assigned identity data'. Architectural patterns and tactics will focus on mitigating this problem, taking relevant QA's and ASRs into account. 
 The UK national fraud and cybercrime reporting centre states only a name, date of birth and current or previous addresses is needed to commit identity fraud. \cite{Action_fraud}
 Identity data can be obtained by personal data in a data breach, for example a breach via commercial parties or (semi-)government. Recent examples are Booking.com \cite{Booking_databreach} or the Dutch GGD \cite{GGD_databreach}.
