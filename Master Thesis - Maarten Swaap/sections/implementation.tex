@@ -8,57 +8,38 @@
 %\includegraphics[width=12cm]{Decomposition of ASR and QAS_zoomed in on %ASR-1 and ASR-2_v2.jpg}\\
 \chapter{Implementation}\label{s:Implementation}
 \todo{better describe why there is a different between currently implemented and future architectures}
-Research question 3 focuses on patterns and tactics, in context of software architecture. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section will give examples on patterns and tactics, combined with trade-offs to take in account when designing a system. Combined with the collected business goals and concerns.
+Research question 3 focuses on patterns and tactics, in context of software architecture. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section contains examples of processes represented by views and contain patterns and tactics. Focusing on the quality attribute 'Confidentiality', which is the quality attribute that could mitigate the operational problems in section \ref{OP}. 
 
-Patterns exist of multiple tactics. While tactics are chosen to empower a single quality attribute, a pattern could serve multiple quality attributes. This chapter will cover one pattern and a set of tactics. Both focused on the quality attribute 'Confidentiality'.
-
-Section \ref{QI} discusses the quantified problem and argues logical reasoning will define how a solution could mitigate the operational problem mentioned in section \ref{Operational_problem}
+Section \ref{QI} discusses the quantified problem and argues logical reasoning will define how a solution could mitigate the operational problem mentioned in section \ref{OP}
 \section{Pattern - Zero-knowledge proof}
-%\graphicspath{ {./images/} }
-%\begin{figure}[t]
-%\centering
-%\label{fig:ZKP}
-%\includegraphics[width=15cm]{A zero-knowledge-proof-based %digital identity management scheme in blockchain.png}\\
-%\caption{Zero knowledge proof}
-%\end{figure}
 By definition of Goldwasser \etal \cite{Goldwasser} "A zero-knowledge proof (ZKP) makes it possible to prove a statement is true while preserving confidentiality of secret information". 
 Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique, which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP_usecase} shows a schema on how this principle works. The ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders.
 Reasoning why this methodology or pattern is a solution for the operational problem in section \ref{OP} is if there is no identity data to be shared or replicated, there will be no profiling or unauthorized correlation of identity data can be done. Without identity data it's not possible to commit identity fraud.
 
-\subsection{Application of Zero-Knowledge proof}
-Zero-knowledge proof itself is a methodology which translates in a variety of technical implementation possibilities. Assessing suitability of this pattern is done by scoping a possible solution in a use-case.
-
-\todo{Improve this use-case description}
-Acting parties: Employer, employee, Belastingdienst.
-When a citizen starts working at an employer, the employer is responsible for the wage declaration. The wage declaration contains income taxes and it's transferred to the tax authorities. In the happy flow, all information off the employee is processed correctly. However, there are practical exceptions, where an employer receives the wrong BSN. The BSN is incorrect or does not match with the employee. Both result in overhead in administration and incorrect data within wage declaration chain.
-A possible solution would be to let the employer check the correctness of personal information when hiring a citizen. Section \ref{BRP} describes the BRP as the central database of personal identity data of citizens and could be used for this purpose. However, giving all employees access to this source of data is not desirable. Not acting in good faith could result in scraping the database to commit fraud or unauthorized usage of personal data, like mentioned in section \ref{Operational_problem}. Zero-knowledge proof could be a pattern that can resolve this problem by providing a check if the data the employer receives from an employee matches with a person in the BRP. 
-
+\subsection{Use-case description}
 \graphicspath{ {./images/} }
 \begin{figure}
 \centering
 \label{fig:ZKP_usecase}
-\includegraphics[width=17cm]{Usecase for zkp.jpg}\\
-\caption{Example usecase where ZKP could suffice}
+\includegraphics[width=10cm]{Usecase for zkp.jpg}\\
+\caption{Scenarios - set of usecases on one of ZKP could be applied}
 \end{figure}
+Zero-knowledge proof itself is a methodology which translates in a variety of technical implementation possibilities. Suitability needs to be assessed per use-case, therefore this research contains an example with high-level scenarios and use-cases depicted in figure \ref{fig:ZKP_usecase}.
 
-\todo{Add solution, what to take into account globally}
+This use-case contains three acting parties, namely the employee, employer and tax authorities (Belastingdienst).
+Firstly a citizen registers finishes it's registration of personal data at a municipality or non-residents database desk. After this process is finished the citizen receives a BSN, which serves as a UIN throughout all government administrations. The citizen starts working at an employer, fills in his personal information for the wage declaration, including the BSN (2). The employer is responsible to transfer the wage declaration and administer it in a transfer to the tax authorities (4). Based on the BSN in the wage declaration, the tax authority checks the personal identity data (5). \par
+In the happy flow, all information off the employee is correct and wage declaration is processed correctly. However, there are practical exceptions, where an employer administers an incorrect BSN or the set of personal information does not match that BSN. In this case, the wage declaration is processed incorrectly. Impact can be another citizen, with the wrongly entered BSN, being taxed for the wage of another citizen. Correcting this mistakes are costly for the government and intense for a citizen who could be negatively impacted because of a higher wage.
 
-\subsection{Trade-offs and concerns}
-\todo{Scrapbook, needs refinement}
-Maintainability - The complexity of the methodology and need of a continuous maintenance on the part of applying the correct algorithm. 
-Adaptability - 
-
-Depending on the type of algorithm used, it's up-to-date on known issues and treats (bedreigingen).
-Trade-off snelheid/efficientie. Depends on choosen methodology and algoritm. It's needed to address the needed calculation power (and assumed costs) when selecting algoritms 
-\todo{Better describe and support these trade-offs and concerns}
+\subsection{Use-case 3: application of zero-knowledge proof}
+A possible solution would be to let the employer check the correctness of personal information when hiring a citizen. Section \ref{BRP} describes the BRP as the central database of personal identity data of citizens and could be used for this purpose. However, pushing information from the BRP to an employer is not legally allowed. One of the risks could be not acting in good faith which could result in scraping the database to commit fraud or unauthorized usage of personal data mentioned in section \ref{OP}. Zero-knowledge proof could be a pattern to resolve this problem by providing a check if the data the employer receives from an employee matches with a person in the BRP. 
 
 \section{Tactics - Quality attribute 'Confidentiality'}
 \graphicspath{ {./images/} }
 \begin{figure}
 \centering
 \label{fig:Tactics}
-\includegraphics[width=17cm]{Tactics.jpg}\\
-\caption{Confidentiality tactics}
+\includegraphics[width=14cm]{Tactics.jpg}\\
+\caption{Confidentiality tactics - next section handles examples in blue frame}
 \end{figure}
 
 \subsection{Authentication}
@@ -66,7 +47,13 @@ A commonly used method for authentication purposes is usage of a certificate. Fo
 
 \subsection{Data minimization}
 \todo{add a description of this method, but emphasise how it's possible to use in software architecture}
-\lipsum[1-1]
+\graphicspath{ {./images/} }
+\begin{figure}
+\centering
+\label{fig:Ad-hoc}
+\includegraphics[width=14cm]{Ad-hoc adresvraag dataminimalisatie-EN.jpg}\\
+\caption{Logical view - example of data minimization in a process}
+\end{figure}
 
 \subsection{Encryption - Transfer of data is encrypted with TLS 1.2 or higher}
 A broadly implemented standard. The Dutch government has a reference architecture NORA (Nederlandse Overheid Referentie Architecture) \cite{NORA} which states this standard needs to be applied or otherwise explained why it has not been implemented \cite{NORA_PasToeOfLegUit}. On the part of TLS its clear version 1.2 or higher is accepted, but version 1.3 is prefered \cite{NORA_TLS}. 
@@ -74,6 +61,24 @@ A broadly implemented standard. The Dutch government has a reference architectur
 \subsection{Peudonymization - Polymorphic Identity or Polymorphic Pseudonym}
 When it's mandatory to share personal information, because it's for example mandatory by law, it's possible to provide this information as a pseudonym. GDPR \cite{GDPR} defines this method as a possibility to mitigate unwanted disclosure of personal information. 
 This technique is already implemented and proven it can work by Erik Verheul \cite{VerheuleID}.
+
+\section{Trade-offs and concerns}
+\todo{Scrapbook, needs refinement}
+
+\begin{tblr}{
+ hlines = {white},
+ vlines = {white},
+ cell{2,3,4,5,6}{1} = {red7}
+}
+  & Trade-off & Concern & Threats and risk \\
+ Maturity & 1 & C-xx, C-xx, C-xx & 3 \\
+ Authenticity & 1 & C-xx, C-xx, C-xx & 3 \\
+ Accountability & 1 & C-xx, C-xx, C-xx & 3 \\
+\end{tblr}
+
+Trade-off snelheid/efficientie. Depends on choosen methodology and algoritm. It's needed to address the needed calculation power (and assumed costs) when selecting algoritms 
+\todo{Better describe and support these trade-offs and concerns}
+
 
 
 %%% Local Variables:
