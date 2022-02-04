@@ -7,15 +7,26 @@
 %\end{figure}
 %\includegraphics[width=12cm]{Decomposition of ASR and QAS_zoomed in on %ASR-1 and ASR-2_v2.jpg}\\
 \chapter{Implementation}\label{s:Implementation}
-Research question 3 focuses on patterns and tactics, in context of software architecture. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section contains examples of processes represented by views and contain patterns and tactics. Focusing on the quality attribute 'Confidentiality', which is the quality attribute that could mitigate the operational problems in section \ref{OP} The pattern of 'Zero-knowledge proof' and tactics of 'Data minimization' and 'Pseudonymization' mentioned by consulted experts as possible techniques to apply. By depicting different types of views on example processes, the examples are presented as possible basis for practical use. The tactics of Authentication' and 'Encryption' are more basic building blocks already applied and therefore explained more briefly.
 
-Section \ref{QI} discusses the quantified problem and argues logical reasoning will define how a solution could mitigate the operational problem mentioned in section \ref{OP}
-\section{Pattern - Zero-knowledge proof}
+\graphicspath{ {./images/} }
+\begin{figure}
+\centering
+\label{fig:Tactics}
+\includegraphics[width=14cm]{Tactics.jpg}\\
+\caption{Confidentiality tactics - next section handles examples in blue frame}
+\end{figure}
+
+Research question 3 focuses on patterns and tactics in context of software architecture which can be used to mitigate identity fraud. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section applies patterns and tactics based on examples of processes represented by views. Quality attribute 'Confidentiality' is identified as Quality attribute which could mitigate operation problems of section \ref{OP}. Based on input of consulted experts the methods of 'Zero-knowledge proof' and 'Data minimization' are example use-cases. 'Pseudonymization' is defined in GDPR Article 4(5) and Article 25 \cite{GDPR} and therefore deemed relevant to explicitly describe definition and possible solution. Depicting different types of views of example processes embedding these methodologies will make it concrete for practical use. The tactics of 'Authentication' and 'Encryption' are argued to implement or otherwise explain why it has not been implemented by Dutch governmental architectural standards \cite{NORA_PasToeOfLegUit}. These are standardized building blocks are important to have in place and explained briefly. 
+
+As discussed in Section \ref{QI} these solutions are not quantified and argued by logical reasoning defining mitigation of the operational problem of section \ref{OP} by a solution.
+
+
+\section{Zero-knowledge proof}
 By definition of Goldwasser \etal \cite{Goldwasser} "A zero-knowledge proof (ZKP) makes it possible to prove a statement is true while preserving confidentiality of secret information". 
-Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique, which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP_usecase} presents a schema on how this principle works. Figure \ref{fig:QAS01} presents two example Quality Attribute Scenarios (QAS) which describe desired system behaviour. The ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders.
-Reasoning why this methodology or pattern is a solution for the operational problem in section \ref{OP} is if there is no identity data to be shared or replicated, there will be no profiling or unauthorized correlation of identity data can be done. Without identity data it's not possible to commit identity fraud.
+Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique, which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP_usecase} presents a schema on how this principle works. Figure \ref{fig:QAS01} presents two example Quality Attribute Scenarios (QAS) which describe desired system behaviour of this example process. ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal has been used as a source for creativity and is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders. Section \ref{OP} mentions the operational problems. If no identity data has to be shared or replicated profiling or unauthorized correlation of identity data will not be possible. Not having identity data at all will also make it impossible to commit identity fraud. 
+Zero-knowledge proof itself is a methodology which translates in a variety of possible technical implementations. This section contains an example of high-level scenario and use-cases depicted in figure \ref{fig:ZKP_usecase}. However, suitability of this methodology needs to be assessed per use-case and possible other application besides this scenario. 
 
-\subsection{Chain of use-cases described}
+\subsection{Use-case description}
 \graphicspath{ {./images/} }
 \begin{figure}
 \centering
@@ -32,28 +43,18 @@ Reasoning why this methodology or pattern is a solution for the operational prob
 \caption{Example of Quality attribute scenario's}
 \end{figure}
 
-
-Zero-knowledge proof itself is a methodology which translates in a variety of technical implementation possibilities. Suitability needs to be assessed per use-case, therefore this research contains an example with high-level scenarios and use-cases depicted in figure \ref{fig:ZKP_usecase}.
-
 This use-case contains three acting parties, namely the employee, employer and tax authorities (Belastingdienst).
-Firstly a citizen registers finishes it's registration of personal data at a municipality or non-residents database desk. After this process is finished the citizen receives a BSN, which serves as a UIN throughout all government administrations. The citizen starts working at an employer, fills in his personal information for the wage declaration, including the BSN (2a). The employer is responsible to administer personal information of its employee (2b) and administer and transfer wage declaration to the tax authorities (4). Based on the BSN in the wage declaration, the tax authority checks the personal identity data (5a). \par
-In the happy flow, all information off the employee is correct and wage declaration is processed correctly (5b). However, there are practical exceptions, where an employer administers an incorrect BSN or the set of personal information does not match that BSN. In this case, the wage declaration is processed incorrectly. Impact can be another citizen, with the wrongly entered BSN, being taxed for the wage of another citizen. Correcting this mistakes are costly for the government and intense for a citizen who could be negatively impacted because of a higher wage.
+A citizen registers finishes it's registration of personal data at a municipality or non-residents database desk. After this process is finished the citizen receives a BSN, which serves as a UIN throughout all government administrations (phase 1). The citizen starts working at an employer, fills in his personal information for the wage declaration, including the BSN (phase 2a). The employer is responsible to administer personal information of its employee (phase 2b) and administer and transfer wage declaration to the tax authorities (phase 4). Based on the BSN in the wage declaration, the tax authority checks the personal identity data (phase 5a). \par
+In the happy flow, all information off the employee is correct and wage declaration is processed correctly (phase 5b). However, there are practical exceptions, where an employer administers an incorrect BSN or the set of personal information does not match that BSN. In this case, the wage declaration is processed incorrectly. Impact can be another citizen, with the wrongly entered BSN, being taxed for the wage of another citizen. Correcting this mistakes are costly for the government and intense for a citizen who could be negatively impacted because of a higher wage and higher tax imposition.
 
-\subsection{Use-case 3: application of zero-knowledge proof}
-A possible solution would be to let the employer check the correctness of personal information when hiring a citizen. Section \ref{BRP} describes the BRP as the central database of personal identity data of citizens and could be used for this purpose. However, pushing information from the BRP to an employer is not legally allowed. One of the risks could be not acting in good faith which could result in scraping the database to commit fraud or unauthorized usage of personal data mentioned in section \ref{OP}. Zero-knowledge proof could be a pattern to resolve this problem by providing a check if the data the employer receives from an employee matches with a person in the BRP. Ideally, a Zero-knowledge proof will result in not saving personal information in an employer database. However, if this is mandatory by law it needs to been done or law needs to be changed.
+\subsection{Use-case phase 3: Adding to Zero-knowledge proof}
+Letting an employer check the authenticity of personal information when hiring a citizen could solve the described problem. Section \ref{BRP} describes the BRP as the central database of personal identity data of citizens and could be considered as a source. However, consulting the BRP by an employer is not legally allowed and one could argue it's not desirable in the future because of the risks employers not acting in good faith. Which could result in scraping the BRP database to commit fraud or unauthorized usage of personal data mentioned in section \ref{OP}. Zero-knowledge proof could be a method to resolve this problem by providing a check on personal information of an employee by the employer. Employer sends in information to a service (website or API/webservice) containing a set of personal information of the employee. Response will present a Boolean value True which will confirm personal information matches BRP data or False indicating employee needs to provide the correct personal information to the employee. Off course, authentication of the employer is needed as is encryption of website or API/webservice. Desired behaviour is described in Figure \ref{fig:QAS01}.
+
+This solution could be considered as an intermediate step implementing a form of Zero-knowledge proof. Ultimately, having a validation token provided by trusted parties and no personal information at all in an employer database would be an end-state situation for Zero-Knowledge proof. However, law mandates an employer to have a personal file containing personal information of its employee. Discussions and required changes on law are out of scope for this research meaning a solution within scope of current law is provided.
 \clearpage
 
-\section{Tactics - Quality attribute 'Confidentiality'}
-\graphicspath{ {./images/} }
-\begin{figure}
-\centering
-\label{fig:Tactics}
-\includegraphics[width=14cm]{Tactics.jpg}\\
-\caption{Confidentiality tactics - next section handles examples in blue frame}
-\end{figure}
-
-\subsection{Data minimization}
-Demanding parties of personal information who are legally permitted to consult the BRP need to search for a person of interest residing on an address. In this case, it can be assumed the personal information has to be shown of only this person of interest. A query which is too broad could give back results of multiple persons. Which could be considered a breach of privacy of those persons. Figure \ref{fig:Adhoc} illustrates a logical view on how a tactic of data minimization could be applied. Firstly, a possible scope of addresses is queried on the Basisadministratie Gebouwen (BAG) \cite{BAG}. The BAG contains almost all addresses within the Dutch territory. Secondly, the correct address is shown and can be selected from this query. If query is a specific statement and returns one result, this result can be selected automatically to support usability. Thirdly, based on the unique address ID from the BAG a list of resident is shown with a minimal set of information to assess if the results contain the person of interest.    
+\section{Data minimization}
+Demanding parties of personal information who are legally permitted to consult the BRP need to search for a person of interest residing on an address. In this case it can be assumed the personal information has to be shown of only this person of interest. A query which is too broad could give back results of multiple persons. Which could be considered a breach of privacy of those persons. As reasoned upon Section \ref{scope} a data breach could result in illegally obtaining personal information. Figure \ref{fig:Adhoc} illustrates a logical view on how a tactic of data minimization could be applied to mitigate this risk. A selection of possible addresses is queried on the Basisadministratie Gebouwen (BAG) \cite{BAG} which is a publicly accessible database (phase 1). The BAG contains almost all addresses within the Dutch territory. The correct address is selected from query output (phase 2). If query is a specific statement and returns one result, this result can be selected automatically to support usability. Thirdly, based on the unique address ID from the BAG a list of resident is shown with a minimal set of information to assess if the results contain the person of interest.    
 \graphicspath{ {./images/} }
 \begin{figure}
 \centering
@@ -62,19 +63,22 @@ Demanding parties of personal information who are legally permitted to consult t
 \caption{Logical view - example of data minimization in a process}
 \end{figure}
 
-\subsection{Pseudonymization - Polymorphic Identity or Polymorphic Pseudonym}
-When it's mandatory to share personal information, because it's for example mandatory by law, it's possible to provide this information as a pseudonym. GDPR \cite{GDPR} defines this method as a possibility to mitigate unwanted disclosure of personal information. 
+\section{Pseudonymization - Polymorphic Identity or Polymorphic Pseudonym}
+GDPR \cite{GDPR} defines ‘pseudonymisation’: "means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person". If personal information needs to be shared in a way the content of the personal information is not relevant and does not needs to be revealed to a third party it can be provided as a pseudonym.   containing personal information, which can  
+
 This technique is already implemented and proven it can work by Erik Verheul \cite{VerheuleID}.
 
-\subsection{Authentication}
+\section{Supporting tactics}
+
+\subsection{Authentication} \label{authentication}
 A commonly used method for authentication purposes is usage of a certificate. For parties who communicate with on or on behalf of the Dutch government the government issues PKIoverheid (PKIO) certificates. These certificates are used for Authentication, Electronic signatures and encryption. \cite{Logius_PKIO}
 
-\subsection{Encryption - Transfer of data is encrypted with TLS 1.2 or higher}
+\subsection{Encryption - Transfer of data is encrypted with TLS 1.2 or higher} \label{encryption}
 A broadly implemented standard. The Dutch government has a reference architecture NORA (Nederlandse Overheid Referentie Architecture) \cite{NORA} which states this standard needs to be applied or otherwise explained why it has not been implemented \cite{NORA_PasToeOfLegUit}. On the part of TLS its clear version 1.2 or higher is accepted, but version 1.3 is preferred \cite{NORA_TLS}. 
 
 \section{Trade-offs and concerns}
 Trade-offs and possible gaps in these solutions are composed by logical reasoning of researcher. 
-\todo{Scrapbook, needs refinement}
+\todo{Format made, contents need to be filled according to notes}
 
 \begin{longtable}[c]{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
  \caption{ASRs and possible trade-offs per tactic\label{tab:Trade-offs}}\\
