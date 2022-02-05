@@ -68,9 +68,9 @@ Demanding parties of personal information who are legally permitted to consult t
 \end{figure}
 
 \section{Pseudonymization - Polymorphic Identity or Polymorphic Pseudonym}
-GDPR \cite{GDPR} defines ‘pseudonymisation’: "means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person". If personal information needs to be shared in a way the content of the personal information is not relevant and does not needs to be revealed to a third party it can be provided as a pseudonym.   containing personal information, which can  
+GDPR \cite{GDPR} defines ‘pseudonymisation’: "means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person". The Digital Authentication Guideline of National Institute of Standards and Technology (NIST) provides requirements to identity providers called pairwise Pseudonymous identifiers \cite{NIST_800-63C}. If a unique identifier of a person needs to be shared while this identifier itself is not relevant for the demanding party it does not needs to be revealed to that party and can be provided as a pseudonym. Requirement within the NIST guideline prescribes tracing that unique person with other attributes should not be possible. Therefore, not scoping pseudonymization not only to a UIN.
 
-This technique is already implemented and proven it can work by Erik Verheul \cite{VerheuleID}.
+This technique has been already applied in a governmental service BSNk \cite{Logius_BSNk} and describes in work by Erik Verheul \cite{VerheuleID}.
 
 \section{Supporting tactics}
 
@@ -115,11 +115,11 @@ Prior to assessment of the suggested solutions on other Quality attributes a def
  \multicolumn{6}{| c |}{End of Table}\\
  \hline\hline
  \endlastfoot
-  Zero-Knowledge proof & Reusability & Maturity &  Authenticity & It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs \\
+  Zero-Knowledge proof & ZKP is a base for Blockchain applications. However, it can be applied more broadly and even without usage of the blockchain. & Depending if it will solutions will be in a blockchain or independent instances of servers. It can be argued the broad applications of blockchain, besided crypto currencies, are scarce &  Authenticity & It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs \\
  \hline
-  Data-minimization & The method itself can be argued as reusable. However, it can be possible to have adapted applications per type of usage of personal information. Resulting in customization and possible various methods of data-minimization. & Maturity & Authenticity & Accountability \\
+  Data-minimization & The method itself can be argued as reusable. However, it can be possible to have adapted applications per type of usage of personal information. Resulting in customization and possible various methods of data-minimization. & From a technological stand the technique can be applied widely. Bounded rationale \cite{simon} by software architects could lead to not implementing because current patterns of delivering data work.  & Authenticity & Accountability \\
  \hline
-  Pseudonymization & Reusability & C-xx, C-xx, C-xx & Authenticity & Accountability \\
+  Pseudonymization & Reusability & Maturity & Authenticity & Accountability \\
  \hline
   Authentication & Reusability & Authentication by means of certificates is a broad standard and therefore deemed to conform with this QA & Authentication is defined as the process to prove Authenticity and therefore deemed to conform with this QA & Accountability\\
  \hline
