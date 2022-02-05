@@ -82,18 +82,17 @@ A commonly used method for authentication purposes is usage of a certificate. Pa
 Encryption of data in transfer is used to prevent unauthorized access and data breaches. A broadly implemented standard is TLS. The Dutch reference architecture NORA (Nederlandse Overheid Referentie Architecture) \cite{NORA} states this standard needs to be applied or otherwise explained why it has not been implemented \cite{NORA_PasToeOfLegUit}. On the part of TLS its clear version 1.2 or higher is accepted, but version 1.3 is preferred \cite{NORA_TLS}. 
 
 \section{Confirmation, gaps and trade-offs}
-Suggested solutions and argumentation is based on the Quality attribute of Confidentiality' which is deemed an Architectural Significant Requirements. Besides Confidentiality' there are four other Architectural Significant Requirements. Possible gaps and trade-offs of these solutions are composed by logical reasoning and meant to be discussed and expanded before implementation.
+Suggested solutions and argumentation is based on the Quality attribute of Confidentiality' which is deemed an Architectural Significant Requirements. Besides Confidentiality' there are four other Architectural Significant Requirements. Possible gaps and trade-offs of these solutions are composed by logical reasoning and discussed in Table \ref{tab:Trade-offs} and expanded before implementation.
 
 \subsection{Definition of residual ASRs}
 Prior to assessment of the suggested solutions on other Quality attributes a definition is needed. ISO 25010 \cite{ISO:25010:2011} defines these Quality attributes: \\
 \textit{Reusability (part of Maintainability)} - Degree to which an asset can be used in more than one system, or in building other assets. \\
 \textit{Maturity (part of Reliability)} - Degree to which a system, product or component meets needs for reliability under normal operation. \\
-\textit{Authenticity (part of Security)} - Degree to which the actions of an entity can be traced uniquely to the entity. \\
+\textit{Authenticity (part of Security)} - Degree to which the identity of a subject or resource can be proved to be the one claimed. \\
 \textit{Accountability (part of Security)} - Degree to which the actions of an entity can be traced uniquely to the entity. \\
 
-\todo{Fill table based on notes}
 \begin{longtable}[c]{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
- \caption{ASRs and possible trade-offs per tactic\label{tab:Trade-offs}}\\
+ \caption{Solutions and conformity to other ASRs\label{tab:Trade-offs}}\\
  \hline
  \multicolumn{6}{| c |}{Begin of Table}\\
  \hline
@@ -115,15 +114,15 @@ Prior to assessment of the suggested solutions on other Quality attributes a def
  \multicolumn{6}{| c |}{End of Table}\\
  \hline\hline
  \endlastfoot
-  Zero-Knowledge proof & ZKP is a base for Blockchain applications. However, it can be applied more broadly and even without usage of the blockchain. & Depending if it will solutions will be in a blockchain or independent instances of servers. It can be argued the broad applications of blockchain, besided crypto currencies, are scarce &  Authenticity & It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs \\
+  Zero-Knowledge proof & ZKP is a base for Blockchain applications. However, it can be applied more broadly and even without usage of the blockchain. & Depending if it will solutions will be in a blockchain or independent instances of servers. It can be argued the broad applications of blockchain, besided crypto currencies, are scarce &  It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs. However, it's needed to assume illegal actions can always occur and need to be mitigated by at least authenticating parties. & It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs. However, logging and monitoring should be defined as a requirement. \\
  \hline
-  Data-minimization & The method itself can be argued as reusable. However, it can be possible to have adapted applications per type of usage of personal information. Resulting in customization and possible various methods of data-minimization. & From a technological stand the technique can be applied widely. Bounded rationale \cite{simon} by software architects could lead to not implementing because current patterns of delivering data work.  & Authenticity & Accountability \\
+  Data-minimization & The method itself can be argued as reusable. However, it can be possible to have adapted applications per type of usage of personal information. Resulting in customization and possible various methods of data-minimization. & From a technological stand the technique can be applied widely. Bounded rationale \cite{simon} by software architects could lead to not implementing because current patterns of delivering data work. & Establishing prove of the identity of a demanding party is needed to preserve the privacy even if provided data is minimized. & Personal information is provided implicating the provider is obligated by law \cite{GDPR} on providing an audit trail. \\
  \hline
-  Pseudonymization & Reusability & Maturity & Authenticity & Accountability \\
+  Pseudonymization & Providing the method as a service like BSNk \cite{Logius_BSNk} will facilitate adoption and possible future applications & Pseudonymization can be implemented through different types of algorithms. Therefore, it's needed to select the appropriate algorithm that fits the desired reliability.  & Besides pseudonymization GDPR \cite{GDPR} Article 32 prescribes "the ability to ensure the ongoing confidentiality, integrity, availability and resilience of processing systems and services". Thus, needing to authenticate demanding parties of personal information & Personal information is provided implicating the provider is obligated by law \cite{GDPR} on providing an audit trail. \\
  \hline
-  Authentication & Reusability & Authentication by means of certificates is a broad standard and therefore deemed to conform with this QA & Authentication is defined as the process to prove Authenticity and therefore deemed to conform with this QA & Accountability\\
+  Authentication with PKIO certificates & Authentication by means of certificates is a broadly reused and therefore deemed to conform with this QA & Authentication by means of certificates is a broad standard and therefore deemed to conform with this QA & Authentication is defined as the process to prove Authenticity and therefore deemed to conform with this QA & Personal information is provided implicating the provider is obligated by law \cite{GDPR} on providing an audit trail.\\
  \hline
- Encryption & Reusability & Encryption with TLS is a broad standard and therefore deemed to conform with this QA & Authenticity & Accountability \\
+ Encryption with TLS 1.2 or higher & Encryption with TLS is a broad standard and therefore deemed to conform with this QA & Encryption with TLS is a broad standard and therefore deemed to conform with this QA & Encryption with TLS supports authenticity but needs additional technologies (fe certificate authentication).  & Encryption itself will not facilitate in this QA \\
  \hline
 \end{longtable}
 
