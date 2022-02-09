@@ -9,12 +9,12 @@
 \chapter{Implementation}\label{s:Implementation}
 
 \graphicspath{ {./images/} }
-\begin{figure}
-\centering
-\label{fig:Tactics}
-\includegraphics[width=14cm]{Tactics.jpg}\\
-\caption{Confidentiality tactics - next section handles examples in blue frame}
-\end{figure}
+    \begin{figure}
+        \centering
+        \includegraphics[width=14cm]{Tactics.jpg}\\
+        \caption{Confidentiality tactics - next section handles examples in blue frame}
+        \label{fig:Tactics}
+    \end{figure}
 
 Research question 3 focuses on patterns and tactics in context of software architecture which can be used to mitigate identity fraud. Bass \etal \cite{Bass2015SoftwareAI} describes architectural patters as "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section applies patterns and tactics based on examples of processes represented by views. Quality attribute 'Confidentiality' is identified as Quality attribute which could mitigate operation problems of section \ref{OP}. Based on input of consulted experts the methods of 'Zero-knowledge proof' and 'Data minimization' are example use-cases. 'Pseudonymization' is defined in GDPR Article 4(5) and Article 25 \cite{GDPR} and therefore deemed relevant to explicitly describe definition and possible solution. Depicting different types of views of example processes embedding these methodologies will make it concrete for practical use. The tactics of 'Authentication' and 'Encryption' are argued to implement or otherwise explain why it has not been implemented by Dutch governmental architectural standards \cite{NORA_PasToeOfLegUit}. These are standardized building blocks are important to have in place and explained briefly. 
 
@@ -26,22 +26,24 @@ By definition of Goldwasser \etal \cite{Goldwasser} "A zero-knowledge proof (ZKP
 Xiaohui Yang and Wenjie Li \cite{YANG2020102050} state "Zero-knowledge proof (ZKP) is a cryptography technique, which means that the prover can convince the verifier that a certain statement is correct without providing the verifier with any additional information or leaking any information about the witness." Figure \ref{fig:ZKP_usecase} presents a schema on how this principle works. Figure \ref{fig:QAS01} presents two example Quality Attribute Scenarios (QAS) which describe desired system behaviour of this example process. ZKProof Community reference \cite{2019:zkproof:community-reference-0.2} of Bennarroch \etal has been used as a source for creativity and is intended to provide a reference for development of zero-knowledge proof by contribution of world-renowned cryptographers, practitioners and industry leaders. Section \ref{OP} mentions the operational problems. If no identity data has to be shared or replicated profiling or unauthorized correlation of identity data will not be possible. Not having identity data at all will also make it impossible to commit identity fraud. 
 Zero-knowledge proof itself is a methodology which translates in a variety of possible technical implementations. This section contains an example of high-level scenario and use-cases depicted in figure \ref{fig:ZKP_usecase}. However, suitability of this methodology needs to be assessed per use-case and possible other application besides this scenario. 
 
-\subsection{Use-case description}
-\graphicspath{ {./images/} }
-\begin{figure}
-\centering
-\label{fig:ZKP_usecase}
-\includegraphics[width=10cm]{Usecase for zkp.jpg}\\
-\caption{Scenarios - set of use-cases on one of ZKP could be applied}
-\end{figure}
+\subsection{Use-case description}\label{UC_description}
+    
+    \begin{figure}
+    \graphicspath{ {./images/} }
+        \includegraphics[width=10cm]{Usecase for zkp.jpg}\\
+        \centering
+        \caption{Scenarios - set of use-cases on one of ZKP could be applied}
+        \label{fig:ZKP_usecase}
+    \end{figure}
 
-\graphicspath{ {./images/} }
-\begin{figure}
-\centering
-\label{fig:QAS01}
-\includegraphics[width=7cm]{QAS-01 ZKP.jpg}\\
-\caption{Example of Quality attribute scenario's}
-\end{figure}
+
+    \begin{figure}
+        \graphicspath{ {./images/} }
+        \centering
+        \includegraphics[width=7cm]{QAS-01 ZKP.jpg}\\
+        \caption{Example of Quality attribute scenarios}
+        \label{fig:QAS01}
+    \end{figure}
 
 This use-case contains three acting parties, namely the employee, employer and tax authorities (Belastingdienst).
 A citizen registers finishes it's registration of personal data at a municipality or non-residents database desk. After this process is finished the citizen receives a BSN, which serves as a UIN throughout all government administrations (phase 1). The citizen starts working at an employer, fills in his personal information for the wage declaration, including the BSN (phase 2a). The employer is responsible to administer personal information of its employee (phase 2b) and administer and transfer wage declaration to the tax authorities (phase 4). Based on the BSN in the wage declaration, the tax authority checks the personal identity data (phase 5a). \par
@@ -59,13 +61,14 @@ GDPR \cite{GDPR} defines 'Data minimization' as "adequate, relevant and limited 
 
 \subsection{Use-case description}
 Demanding parties of personal information who are legally permitted to consult the BRP need to search for a person of interest residing on an address. In this case it can be assumed the personal information has to be shown of only this person of interest. A query which is too broad could give back results of multiple persons. Which could be considered a breach of privacy of those persons. As reasoned upon Section \ref{scope} a data breach could result in illegally obtaining personal information. Figure \ref{fig:Adhoc} illustrates a logical view on how a tactic of data minimization could be applied to mitigate this risk. A selection of possible addresses is queried on the Basisadministratie Gebouwen (BAG) \cite{BAG} which is a publicly accessible database (phase 1). The BAG contains almost all addresses within the Dutch territory. The correct address is selected from query output (phase 2). If query is a specific statement and returns one result, this result can be selected automatically to support usability. Based on the unique address ID from the BAG a list of resident is shown if the demanding party is authorised to consult the BRP (phase 3). A minimal set of personal information is shown to assess if the results contain the person of interest (phase 4). If the person of interest is identified to be in this list the BRP is checked again which attributes the demanding party can view (phase 5) and the personal information is retrieved and shown to the demanding party (phase 6).
-\graphicspath{ {./images/} }
-\begin{figure}
-\centering
-\label{fig:Adhoc}
-\includegraphics[width=14cm]{Ad-hoc adresvraag dataminimalisatie-EN.jpg}\\
-\caption{Logical view - example of data minimization in a process}
-\end{figure}
+    
+    \begin{figure}
+        \graphicspath{ {./images/} }
+        \centering
+        \includegraphics[width=14cm]{Ad-hoc adresvraag dataminimalisatie-EN.jpg}\\
+        \caption{Logical view - example of data minimization in a process}
+        \label{fig:Adhoc}
+    \end{figure}
 
 \section{Pseudonymization - Polymorphic Identity or Polymorphic Pseudonym}
 GDPR \cite{GDPR} defines ‘pseudonymisation’: "means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person". The Digital Authentication Guideline of National Institute of Standards and Technology (NIST) provides requirements to identity providers called pairwise Pseudonymous identifiers \cite{NIST_800-63C}. If a unique identifier of a person needs to be shared while this identifier itself is not relevant for the demanding party it does not needs to be revealed to that party and can be provided as a pseudonym. Requirement within the NIST guideline prescribes tracing that unique person with other attributes should not be possible. Therefore, not scoping pseudonymization not only to a UIN.
