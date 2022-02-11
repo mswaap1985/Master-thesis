@@ -1,11 +1,3 @@
-%\chapter{Implementation}\label{s:implementation}
-%\graphicspath{ {./images/} }
-%\begin{figure}[t]
-%\centering
-%\caption{Zoomed in on QAS of ASR-1}
-%\label{fig:ASR2}
-%\end{figure}
-%\includegraphics[width=12cm]{Decomposition of ASR and QAS_zoomed in on %ASR-1 and ASR-2_v2.jpg}\\
 \chapter{Implementation}\label{s:Implementation}
 
 \graphicspath{ {./images/} }
@@ -16,9 +8,7 @@
         \label{fig:Tactics}
     \end{figure}
 
-Research question 3 focuses on patterns and tactics in context of software architecture which can be used to mitigate identity fraud. Bass \etal \cite{Bass2015SoftwareAI} mentions the following regarding architectural patterns "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section applies patterns and tactics based on examples of processes represented by views as referred to by Krutchen \cite{Krutchen1995ArchitecturalB}. Quality attribute 'Confidentiality' is identified as Quality attribute which could mitigate the operational problems of section \ref{OP}. Input of consulted experts have marked the methods of 'Zero-knowledge proof' and 'Data minimization' as examples of use-cases. 'Pseudonymization' is defined in GDPR Article 4(5) and Article 25 \cite{GDPR} and therefore deemed relevant to explicitly describe the definition and possible solution. Depicting different types of views of example processes embedding these methodologies, will make it more tangible for practical use. The tactics of 'Authentication' and 'Encryption' are argued to implement or otherwise explain why it has not been implemented by Dutch governmental architectural standards \cite{NORA_PasToeOfLegUit}. These standardized building blocks are important to have in place and explained briefly. 
-
-As discussed in Section \ref{QI} the impact of these solutions are not quantified, but will be argued by logical reasoning defining mitigation of the operational problem of section \ref{OP}.
+Research question 3 focuses on patterns and tactics in context of software architecture which can be used to mitigate identity fraud. Bass \etal \cite{Bass2015SoftwareAI} mentions the following regarding architectural patterns "Compositions of architectural elements and provide packaged strategies for solving some of the problems facing a system." This section applies patterns and tactics based on examples of processes represented by views as referred to by Krutchen \cite{Krutchen1995ArchitecturalB}. Quality attribute 'Confidentiality' is identified as Quality attribute which could mitigate the operational problems of section \ref{OP}. Input of consulted experts have marked the methods of 'Zero-knowledge proof' and 'Data minimization' as examples of use-cases. 'Pseudonymization' is defined in GDPR Article 4(5) and Article 25 \cite{GDPR} and therefore deemed relevant to explicitly describe the definition and possible solution. Depicting different types of views of example processes embedding these methodologies, will make it more tangible for practical use. The tactics of 'Authentication' and 'Encryption' are argued to implement or otherwise explain why it has not been implemented by Dutch governmental architectural standards \cite{NORA_PasToeOfLegUit}. These standardized building blocks are important to have in place and explained briefly.
 
 
 \section{Zero-knowledge proof}
@@ -47,7 +37,6 @@ Zero-knowledge proof itself is a methodology which translates into a variety of 
 
 This use-case contains three acting parties, namely the employee, the employer and the tax authorities (Belastingdienst).
 A citizen finishes its registration of personal data at a municipality or non-residents database desk. After this process is finished the citizen receives a BSN, which serves as a UIN throughout all government administrations (phase 1). The citizen starts working at an employer, fills in his personal information for the wage declaration, including the BSN (phase 2a). The employer is responsible for administering personal information of its employees (phase 2b) and administering and transferring wage declarations to the tax authorities (phase 4). Based on the BSN in the wage declaration, the tax authority checks the personal identity data (phase 5a). \par
-% In figuur 4.2 staat in de legenda "Excisting process", dit moet zijn "Existing process"
 In the happy flow, all information of the employee is correct and the wage declaration is processed correctly (phase 5b). However, there are practical exceptions, where an employer administers an incorrect BSN or the set of personal information does not match that BSN. In this case, the wage declaration is processed incorrectly. Impact can be another citizen, with the wrongly entered BSN, being taxed for the wage of a different citizen. Correcting these mistakes are costly for the government and intense for a citizen who could be negatively impacted because of a higher wage and higher tax imposition.
 
 \subsection{Use-case phase 3: Adding Zero-knowledge proof}
@@ -118,7 +107,7 @@ Prior to the assessment of the suggested solutions on other Quality attributes a
  \multicolumn{6}{| c |}{End of Table}\\
  \hline\hline
  \endlastfoot
-  Zero-Knowledge proof & ZKP is a base for Blockchain applications. However, it can be applied more broadly and even without usage of the blockchain. & Depending if it will be in a blockchain or independent instances of servers. It can be argued the broad applications of blockchain, besided crypto currencies, are scarce &  It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs. However, it's needed to assume illegal actions can always occur and need to be mitigated by at least authenticating parties. & It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs. However, logging and monitoring should be defined as a requirement. \\
+  Zero-Knowledge proof & ZKP is a base for Blockchain applications. However, it can be applied more broadly and even without usage of the blockchain. & Depending if it will be in a blockchain or independent instances of servers. It can be argued the broad applications of blockchain, beside crypto currencies, are scarce &  It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs. However, it's needed to assume illegal actions can always occur and need to be mitigated by at least authenticating parties. & It can be argued privacy preserving solutions are in less need of this QA, having no information leaked when a breach occurs. However, logging and monitoring should be defined as a requirement. \\
  \hline
   Data-minimization & The method itself can be argued as reusable. However, it can be possible to have adapted applications per type of usage of personal information. Resulting in customization and possible various methods of data-minimization. & From a technological stand the technique can be applied widely. Bounded rationale \cite{simon} by software architects could lead to not implementing because of current patterns of delivering data work. & Establishing prove of the identity of a demanding party is needed to preserve the privacy even if the provided data is minimized. & Personal information is provided, implicating the provider is obligated by law \cite{GDPR} on providing an audit trail. \\
  \hline
@@ -126,11 +115,9 @@ Prior to the assessment of the suggested solutions on other Quality attributes a
  \hline
   Authentication with PKIO certificates & Authentication by means of certificates is broadly reused and therefore deemed to conform with this QA & Authentication by means of certificates is a broad standard and therefore deemed to conform with this QA & Authentication is defined as the process to prove Authenticity and therefore deemed to conform with this QA & Personal information is provided. implicating the provider is obligated by law \cite{GDPR} on providing an audit trail.\\
  \hline
- Encryption with TLS 1.2 or higher & Encryption with TLS is a broad standard and therefore deemed to conform with this QA & Encryption with TLS is a broad standard and therefore deemed to conform with this QA & Encryption with TLS supports authenticity but needs additional technologies \todo{(fe certificate authentication)}.  & Encryption itself will not facilitate in this QA \\
+ Encryption with TLS 1.2 or higher & Encryption with TLS is a broad standard and therefore deemed to conform with this QA & Encryption with TLS is a broad standard and therefore deemed to conform with this QA & Encryption with TLS supports authenticity but needs additional technologies (for example certificate authentication).  & Encryption itself will not facilitate in this QA \\
  \hline
 \end{longtable}
-
-
 
 %%% Local Variables:
 %%% mode: latex
